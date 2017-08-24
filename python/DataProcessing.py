@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+"""
+对数据源文件进行操作
+"""
 import csv
 import sys
 import time
@@ -9,7 +12,12 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-def gpsChange(input, output):
+def gps_change(input, output):
+    """
+     通过百度地图API将获取到的百度地图坐标转为正确坐标
+    :param input: 数据源文件
+    :param output: 转换后的数据文件
+    """
     flag = 1
     api = 'http://api.map.baidu.com/geoconv/v1/?coords={}&from=5&to=5&ak=r4lx3pCN4nw4YyUKpa9hHLtS2G3zXUAB'
     csvFile2 = open(output, 'w')
@@ -36,6 +44,11 @@ def gpsChange(input, output):
 
 
 def average(input, output):
+    """
+    在数据源中添加一列用于记录平均租金价格(租金/面积)
+    :param input: 数据源文件
+    :param output: 修改后的数据文件
+    """
     flag = 1
     csvFile2 = open(output, 'w')
     writer = csv.writer(csvFile2, delimiter=',')
@@ -52,5 +65,6 @@ def average(input, output):
     csvfile.close()
     csvFile2.close()
 
-# a = p.text.split('"status":0,"result":')[-1].replace('[', '').replace(']}', '')
-# print a
+if __name__="__main__":
+    gps_change('rent.csv', 'rent_gps.csv')
+    average('rent_gps.csv', 'rent_ave.csv')
