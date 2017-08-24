@@ -65,6 +65,7 @@ def average(input, output):
     csvfile.close()
     csvFile2.close()
 
-if __name__="__main__":
+
+if __name__ == "__main__":
     gps_change('rent.csv', 'rent_gps.csv')
     average('rent_gps.csv', 'rent_ave.csv')
