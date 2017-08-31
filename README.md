@@ -2,7 +2,7 @@
 
 ### 简介
 通过爬虫爬取了2W条上海链家租房信息，并使用python对其进行分析。  
-报告地址：[上海链家网租房信息分析报告](https://github.com/learrn/lianjia)
+报告地址：[上海链家网租房信息分析报告](http://www.jianshu.com/p/596d24d2c293)
 
 ### 目录结构
 
